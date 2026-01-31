@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Reports\Schemas;
 
+use Filament\Forms\Components\DatePicker;
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Grid;
@@ -42,30 +43,43 @@ class ReportForm
                         Grid::make(2)->schema([
                             TextInput::make('category')
                                 ->label('Category')
+                                ->placeholder('নির্বাচনী আচরনবিধি লঙ্ঘন')
                                 ->required()
                                 ->columnSpanFull(),
 
                             TextInput::make('time')
                                 ->label('Time')
+                                ->placeholder('২৫ জানুয়ারি, বিকাল ৫টা থেকে কয়েক ঘন্টা')
                                 ->required()
                                 ->columnSpanFull(),
 
                             TextInput::make('location')
                                 ->label('Location')
+                                ->placeholder('ময়মনসিংহের ভালুকা বাসস্ট্যান্ড ও হবিরবাড়ি এলাকা')
                                 ->required()
                                 ->columnSpanFull(),
 
                             TextInput::make('constituency')
                                 ->label('Constituency')
+                                ->placeholder('ময়মনসিংহ-১১')
                                 ->required()
                                 ->columnSpanFull(),
 
                             Textarea::make('description')
                                 ->label('Description')
+                                ->placeholder('হবিগঞ্জ-৪ (মাধবপুর-চুনারুঘাট) আসনে আচরণবিধি লঙ্ঘনের অভিযোগে দুই প্রার্থীকে শোকজ করা হয়েছে। নির্বাচনি অনুসন্ধান ও বিচারিক কমিটির চেয়ারম্যান.....')
                                 ->rows(4)
                                 ->required()
                                 ->columnSpanFull(),
-                        ]),
+
+                            DatePicker::make('event_date')
+                                ->label('ঘটনার তারিখ')
+                                ->placeholder('12 Feb 2026')
+                                ->required()
+                                ->native(false)
+                                ->displayFormat('d M Y'),
+
+        ]),
                     ]),
 
                 // ================= Media Evidence =================
@@ -116,6 +130,7 @@ class ReportForm
 
                             Textarea::make('evidence')
                                 ->label('Feedback of Verifying')
+                                ->placeholder('ছবি ও স্থানীয় প্রশাসনের তথ্য মিলিয়ে দেখা হয়েছে।')
                                 ->rows(4)
                                 ->columnSpanFull(),
                         ]),
