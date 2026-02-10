@@ -19,7 +19,9 @@ class Report extends Model
         'constituency',
         'contact',
         'url',
-        'event_date'
+        'event_date',
+        'ip_address',
+        'user_agent'
     ];
 
     public function getImageAttribute($value)

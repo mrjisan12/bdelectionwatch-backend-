@@ -27,6 +27,8 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    
+    'report_api_token' => env('API_TOKEN', 'default-fallback-token'),
 
     /*
     |--------------------------------------------------------------------------

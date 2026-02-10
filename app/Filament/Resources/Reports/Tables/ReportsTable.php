@@ -36,7 +36,6 @@ class ReportsTable
                     ->wrap(),
 
                 TextColumn::make('constituency')
-                    ->sortable()
                     ->wrap(),
 
                 TextColumn::make('description')
@@ -62,7 +61,7 @@ class ReportsTable
 
                 TextColumn::make('contact')
                     ->wrap(),
-
+                    
                 TextColumn::make('url')
                     ->wrap(),
 

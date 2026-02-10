@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Reports\Schemas;
 
-use Filament\Forms\Components\DatePicker;
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Grid;
@@ -10,6 +9,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\DatePicker;
 
 class ReportForm
 {
@@ -71,15 +71,14 @@ class ReportForm
                                 ->rows(4)
                                 ->required()
                                 ->columnSpanFull(),
-
+                                
                             DatePicker::make('event_date')
                                 ->label('ঘটনার তারিখ')
                                 ->placeholder('12 Feb 2026')
                                 ->required()
                                 ->native(false)
                                 ->displayFormat('d M Y'),
-
-        ]),
+                        ]),
                     ]),
 
                 // ================= Media Evidence =================
@@ -101,14 +100,14 @@ class ReportForm
                                 ->url()
                                 ->columnSpanFull()
                                 ->nullable(),
-
+                                
                             TextInput::make('url')
                                 ->label('Evidence URL')
                                 ->placeholder('https://www.jagonews24.com/country/news/...')
                                 ->url()
                                 ->columnSpanFull()
                                 ->nullable(),
-
+                                
                         ]),
                     ]),
 
